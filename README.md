@@ -136,37 +136,38 @@ flavorizr:
 
 ##### <a href="#available-instructions">Available instructions</a>
 
-| value                   | category      | description                                                             |
-|:------------------------|:--------------|:------------------------------------------------------------------------|
-| assets:download         | Miscellaneous | Downloads the assets zip from the network                               |
-| assets:extract          | Miscellaneous | Extracts the downloaded zip in the project .tmp directory               |
-| assets:clean            | Miscellaneous | Removes the assets from the project directory                           |
-| android:buildGradle     | Android       | Adds the flavors to the Android build.gradle file                       |
-| android:androidManifest | Android       | Changes the reference of the app name in the AndroidManifest.xml        |
-| android:dummyAssets     | Android       | Generates some default icons for your custom flavors                    |
-| android:icons           | Android       | Creates a set of icons for each flavor according to the icon directive  |
-| flutter:flavors         | Flutter       | Creates the flutter flavor configuration file                           |
-| flutter:app             | Flutter       | Creates the app.dart entry                                              |
-| flutter:pages           | Flutter       | Creates a set of default pages for the app                              |
-| flutter:main            | Flutter       | Creates the main target to run the app                                  |
-| flutter:targets         | Flutter       | Creates a set of targets for each flavor instance                       |
-| google:firebase         | Google        | Adds Google Firebase configurations for Android and iOS for each flavor |
-| huawei:agconnect        | Huawei        | Adds Huawei AGConnect configurations for Android for each flavor        |
-| ide:config              | IDE           | Generates debugging configurations for each flavor of your IDE          |
-| ios:xcconfig            | iOS           | Creates a set of xcconfig files for each flavor and build configuration |
-| ios:buildTargets        | iOS           | Creates a set of build targets for each flavor and build configuration  |
-| ios:schema              | iOS           | Creates a set of schemas for each flavor                                |
-| ios:dummyAssets         | iOS           | Generates some default icons for your custom flavors                    |
-| ios:icons               | iOS           | Creates a set of icons for each flavor according to the icon directive  |
-| ios:plist               | iOS           | Updates the info.plist file                                             |
-| ios:launchScreen        | iOS           | Creates a set of launchscreens for each flavor                          |
-| macos:xcconfig          | macOS         | Creates a set of xcconfig files for each flavor and build configuration |
-| macos:configs           | macOS         | Creates a set of xcconfig files for each flavor and build configuration |
-| macos:buildTargets      | macOS         | Creates a set of build targets for each flavor and build configuration  |
-| macos:schema            | macOS         | Creates a set of schemas for each flavor                                |
-| macos:dummyAssets       | macOS         | Generates some default icons for your custom flavors                    |
-| macos:icons             | macOS         | Creates a set of icons for each flavor according to the icon directive  |
-| macos:plist             | macOS         | Updates the info.plist file                                             |
+| value                   | category      | description                                                                                                    |
+|:------------------------|:--------------|:---------------------------------------------------------------------------------------------------------------|
+| assets:download         | Miscellaneous | Downloads the assets zip from the network                                                                      |
+| assets:extract          | Miscellaneous | Extracts the downloaded zip in the project .tmp directory                                                      |
+| assets:clean            | Miscellaneous | Removes the assets from the project directory                                                                  |
+| android:buildGradle     | Android       | Adds the flavors to the Android build.gradle file                                                              |
+| android:androidManifest | Android       | Changes the reference of the app name in the AndroidManifest.xml                                               |
+| android:dummyAssets     | Android       | Generates some default icons for your custom flavors                                                           |
+| android:icons           | Android       | Creates a set of icons for each flavor according to the icon directive                                         |
+| android:adaptiveIcons   | Android       | Creates a set of adaptive icons for each flavor according to the iconForeground and iconBackground directives  |
+| flutter:flavors         | Flutter       | Creates the flutter flavor configuration file                                                                  |
+| flutter:app             | Flutter       | Creates the app.dart entry                                                                                     |
+| flutter:pages           | Flutter       | Creates a set of default pages for the app                                                                     |
+| flutter:main            | Flutter       | Creates the main target to run the app                                                                         |
+| flutter:targets         | Flutter       | Creates a set of targets for each flavor instance                                                              |
+| google:firebase         | Google        | Adds Google Firebase configurations for Android and iOS for each flavor                                        |
+| huawei:agconnect        | Huawei        | Adds Huawei AGConnect configurations for Android for each flavor                                               |
+| ide:config              | IDE           | Generates debugging configurations for each flavor of your IDE                                                 |
+| ios:xcconfig            | iOS           | Creates a set of xcconfig files for each flavor and build configuration                                        |
+| ios:buildTargets        | iOS           | Creates a set of build targets for each flavor and build configuration                                         |
+| ios:schema              | iOS           | Creates a set of schemas for each flavor                                                                       |
+| ios:dummyAssets         | iOS           | Generates some default icons for your custom flavors                                                           |
+| ios:icons               | iOS           | Creates a set of icons for each flavor according to the icon directive                                         |
+| ios:plist               | iOS           | Updates the info.plist file                                                                                    |
+| ios:launchScreen        | iOS           | Creates a set of launchscreens for each flavor                                                                 |
+| macos:xcconfig          | macOS         | Creates a set of xcconfig files for each flavor and build configuration                                        |
+| macos:configs           | macOS         | Creates a set of xcconfig files for each flavor and build configuration                                        |
+| macos:buildTargets      | macOS         | Creates a set of build targets for each flavor and build configuration                                         |
+| macos:schema            | macOS         | Creates a set of schemas for each flavor                                                                       |
+| macos:dummyAssets       | macOS         | Generates some default icons for your custom flavors                                                           |
+| macos:icons             | macOS         | Creates a set of icons for each flavor according to the icon directive                                         |
+| macos:plist             | macOS         | Updates the info.plist file                                                                                    |
 
 #### android (under app)
 
@@ -204,6 +205,8 @@ flavorizr:
 | customConfig        | Array  |         | false    | An array which contains a set of custom configs, *overrides defaultConfig* |
 | generateDummyAssets | bool   | true    | false    | True if you want to generate dummy assets (icon set, strings, etc)         |
 | icon                | String |         | false    | The icon path for this android flavor                                      |
+| iconForeground      | String |         | false    | The adaptive icon (foreground) path for this android flavor                |
+| iconBackground      | String |         | false    | The adaptive icon (background) path for this android flavor                |
 
 #### ios (under *flavorname*)
 
@@ -373,6 +376,7 @@ By default, when you do not specify a custom set of processors by appending the 
 * android:buildGradle
 * android:dummyAssets
 * android:icons
+* android:adaptiveIcons
 * flutter:flavors
 * flutter:app
 * flutter:pages

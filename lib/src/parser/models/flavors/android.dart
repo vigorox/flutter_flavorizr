@@ -45,6 +45,12 @@ class Android extends OS {
   @JsonKey(disallowNullValue: true)
   final AGConnect? agconnect;
 
+  @JsonKey(disallowNullValue: true)
+  final String? iconForeground;
+
+  @JsonKey(disallowNullValue: true)
+  final String? iconBackground;
+
   Android({
     required this.applicationId,
     this.customConfig = const {},
@@ -53,6 +59,8 @@ class Android extends OS {
     bool generateDummyAssets = true,
     Firebase? firebase,
     String? icon,
+    this.iconForeground,
+    this.iconBackground,
   }) : super(
           generateDummyAssets: generateDummyAssets,
           firebase: firebase,
